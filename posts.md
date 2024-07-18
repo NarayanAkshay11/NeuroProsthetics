@@ -1,27 +1,11 @@
-# Breakthrough in Neural Interface Sensitivity
+# Kick Start - Aarambikalaama
 
 Date: July 18, 2024
 
-Our team has achieved a significant milestone in neural interface technology, allowing for more intuitive control of our prosthetic arm. The new interface can detect neural signals with unprecedented accuracy, enabling users to control the prosthetic with natural thoughts and minimal training.
+Our team finally seems to be moving from a small pair of 3 to a faceless mass of 3. Looking at the requirements, it might even go upto 7. But I'd rather outsource work or take favours rather than continuously adding people to this route to success. We came up with the plan for a MVP which we can present to our investors. Today is also the day when I created this website. And, for the ones interested, I'm Akshay, CE Sophomore, really looking forward to do something meaningful and mint money ASAP.
 
-# Machine Learning Model Improves Gesture Recognition
+I plan to use this blog as a manner to communicate and start a community of brilliant minds to collaborate. If you wish to contact me, do fill the form in this website (Contact).
+Sayonara
 
-Date: July 15, 2024
+# Next
 
-We've implemented a new machine learning model that dramatically improves the accuracy of gesture recognition in our prosthetic arm. This advancement allows for a wider range of movements and more nuanced control, bringing us one step closer to replicating natural arm functionality.
-
-# Clinical Trials Show Promising Results
-
-Date: July 10, 2024
-
-The first phase of clinical trials for our neural-enhanced prosthetic arm has concluded with extremely promising results. Participants reported a significant improvement in their quality of life, with many describing the prosthetic as feeling like a natural extension of their body.
-
-# Miniaturization Breakthrough in Neural Implants
-
-Date: July 5, 2024
-
-Our research team has made a breakthrough in miniaturizing neural implants, reducing their size by 50% without compromising functionality. This development paves the way for less invasive procedures and potentially broader applications of our technology.
-
-# Partnership Announced with Leading Robotics Firm
-
-Date
