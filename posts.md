@@ -9,3 +9,6 @@ Sayonara
 
 # Next
 
+Date: July 25, 2024
+
+Exactly one week after the first post. Now we're currently working on creating a spinal battery for our peripherals. That's right guys, we finally move from a prosthetics org to one of periperals. Can't blame us really, we gotta mint money too right. But prosthetics will definitely be low/no cost. I promise that.
