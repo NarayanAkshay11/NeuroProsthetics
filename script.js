@@ -1,105 +1,53 @@
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Fetch and display blog posts
-fetch('posts.md')
-    .then(response => response.text())
-    .then(text => {
-        const posts = parseMD(text);
-        const recentPosts = posts.slice(0, 3);
-        const blogPostsContainer = document.getElementById('blog-posts');
-
-        recentPosts.forEach(post => {
-            const postElement = createPostElement(post);
-            blogPostsContainer.appendChild(postElement);
-        });
+        const formData = new FormData(contactForm);
+        const formValues = Object.fromEntries(formData.entries());
+        
+        // Here you would typically send the form data to a server
+        // For this example, we'll just log it to the console
+        console.log('Form submitted:', formValues);
+        
+        // Clear the form
+        contactForm.reset();
+        
+        // Show a success message (you can replace this with a more user-friendly notification)
+        alert('Thank you for your message! We will get back to you soon.');
     });
 
-// Parse Markdown file
-function parseMD(text) {
-    const posts = [];
-    const lines = text.split('\n');
-    let currentPost = {};
+    // Add a simple animation to service items
+    const serviceItems = document.querySelectorAll('.service-item');
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
 
-    lines.forEach(line => {
-        if (line.startsWith('# ')) {
-            if (currentPost.title) {
-                posts.push(currentPost);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
             }
-            currentPost = { title: line.slice(2), content: '' };
-        } else if (line.startsWith('Date: ')) {
-            currentPost.date = line.slice(6);
-        } else {
-            currentPost.content += line + '\n';
-        }
-    });
+        });
+    }, observerOptions);
 
-    if (currentPost.title) {
-        posts.push(currentPost);
-    }
-
-    return posts.reverse(); // Most recent first
-}
-
-// Create blog post element
-function createPostElement(post) {
-    const postElement = document.createElement('div');
-    postElement.classList.add('blog-post');
-    postElement.innerHTML = `
-        <h3>${post.title}</h3>
-        <div class="date">${post.date}</div>
-        <p>${post.content.slice(0, 80)}...</p>
-    `;
-    postElement.addEventListener('click', () => openDialog(post));
-    return postElement;
-}
-
-// Dialog functionality
-const dialog = document.getElementById('dialog');
-const closeBtn = document.getElementsByClassName('close')[0];
-
-function openDialog(post) {
-    document.getElementById('dialog-title').textContent = post.title;
-    document.getElementById('dialog-date').textContent = post.date;
-    document.getElementById('dialog-content').textContent = post.content;
-    dialog.style.display = 'block';
-}
-
-closeBtn.onclick = function() {
-    dialog.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == dialog) {
-        dialog.style.display = 'none';
-    }
-}
-
-// Form submission
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    fetch('https://formspree.io/f/mblrleyr', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            alert('Thank you for your message. We will get back to you soon!');
-            this.reset();
-        } else {
-            alert('Oops! There was a problem submitting your form');
-        }
-    }).catch(error => {
-        alert('Oops! There was a problem submitting your form');
+    serviceItems.forEach(item => {
+        item.style.opacity = 0;
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(item);
     });
 });
