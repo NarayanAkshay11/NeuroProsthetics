@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
@@ -100,14 +100,13 @@ h1, h2 {
     background-color: #c0392b;
 }
 
-.service-grid {
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.service-item {
-    background-color: #fff;
+.card {
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
@@ -115,39 +114,22 @@ h1, h2 {
     transition: transform 0.3s ease;
 }
 
-.service-item:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-.service-item i {
+#services .card {
+    background-color: #e6f3ff;
+}
+
+#projects .card {
+    background-color: #fff9e6;
+}
+
+.card i {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #3498db;
-}
-
-.project-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 1rem 0;
-}
-
-.project {
-    flex: 0 0 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project h3, .project p {
-    padding: 1rem;
 }
 
 #contact-form {
@@ -155,14 +137,19 @@ h1, h2 {
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #contact-form input,
 #contact-form textarea {
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 #contact-form button {
@@ -170,16 +157,18 @@ h1, h2 {
     color: #fff;
     padding: 0.8rem;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 #contact-form button:hover {
     background-color: #2980b9;
 }
 
-#robotic-arm-container {
+#geometric-shapes-container {
     position: fixed;
     right: 20px;
     top: 50%;
