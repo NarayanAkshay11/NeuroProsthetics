@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Random rotation function
     function randomRotation(shape) {
-        const rotationSpeed = 0.1;
+        const rotationSpeed = 0.02;
         const randomAxis = new THREE.Vector3(
             Math.random() - 0.5,
             Math.random() - 0.5,
@@ -84,13 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function rotateShape() {
             shape.rotateOnAxis(randomAxis, rotationSpeed);
-            if (Math.random() < 0.02) { // 2% chance to change rotation axis
-                randomAxis.set(
-                    Math.random() - 0.5,
-                    Math.random() - 0.5,
-                    Math.random() - 0.5
-                ).normalize();
-            }
             requestAnimationFrame(rotateShape);
         }
 
