@@ -16,10 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const formData = new FormData(contactForm);
         const formValues = Object.fromEntries(formData.entries());
+
+        // Send form data via email
+        const email = 'your-email@example.com';
+        const subject = 'Contact Form Submission';
+        const body = `Name: ${formValues.name}\nEmail: ${formValues.email}\nMessage: ${formValues.message}`;
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
-        // Here you would typically send the form data to a server
-        console.log('Form submitted:', formValues);
-        
+        window.location.href = mailtoLink;
+
         // Clear the form
         contactForm.reset();
         
@@ -65,47 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     camera.position.z = 4;
 
+    // Add OrbitControls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; // Enable damping (inertia)
+    controls.dampingFactor = 0.05;
+
     // Animation
     function animate() {
         requestAnimationFrame(animate);
+        controls.update(); // Update controls
         renderer.render(scene, camera);
     }
 
     animate();
-
-    // Random rotation function
-    function randomRotation(shape) {
-        const rotationSpeed = 0.02;
-        const randomAxis = new THREE.Vector3(
-            Math.random() - 0.5,
-            Math.random() - 0.5,
-            Math.random() - 0.5
-        ).normalize();
-
-        function rotateShape() {
-            shape.rotateOnAxis(randomAxis, rotationSpeed);
-            requestAnimationFrame(rotateShape);
-        }
-
-        rotateShape();
-    }
-
-    // Click event listeners for shapes
-    renderer.domElement.addEventListener('click', (event) => {
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-
-        mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
-        mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-
-        const intersects = raycaster.intersectObjects([shape1, shape2, shape3]);
-
-        if (intersects.length > 0) {
-            randomRotation(intersects[0].object);
-        }
-    });
 
     // Responsive design for mobile
     function resizeShapesContainer() {
