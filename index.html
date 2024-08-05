@@ -1,59 +1,72 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroLink Prosthetics - Advanced Neural Interfaces</title>
+    <title>TechNova Solutions</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
+            <div class="logo">TechNova Solutions</div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h1>NeuroLink Prosthetics</h1>
-        <p>Bridging minds and machines with cutting-edge neural interfaces.</p>
-        <a href="#product" class="btn pulse">Discover Our Technology</a>
-    </section>
+    <main>
+        <section id="home">
+            <h1>Welcome to TechNova Solutions</h1>
+            <p>Your one-stop shop for innovative tech solutions</p>
+            <button class="cta-button">Get Started</button>
+        </section>
 
-    <section id="product">
-        <h2>Neural-Enhanced Prosthetic Arm</h2>
-        <p>Our prosthetic arm utilizes advanced brain-computer interfaces and AI to provide intuitive, thought-controlled movement.</p>
-        <a href="#contact" class="btn">Request a Demo</a>
-    </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>Custom websites tailored to your needs</p>
+                </div>
+                <div class="service-item">
+                    <h3>Mobile Apps</h3>
+                    <p>Cross-platform mobile applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>AI Solutions</h3>
+                    <p>Cutting-edge artificial intelligence integration</p>
+                </div>
+                <div class="service-item">
+                    <h3>Cloud Services</h3>
+                    <p>Scalable and secure cloud infrastructure</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="blog">
-        <h2>Latest Insights</h2>
-        <div id="blog-posts"></div>
-        <a href="blogs.html" class="btn">Show More</a>
-    </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>TechNova Solutions is a dynamic student-run tech startup offering a wide range of innovative services. Our team of passionate experts is dedicated to delivering cutting-edge solutions for all your technological needs.</p>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
 
-    <div id="dialog" class="dialog">
-        <div class="dialog-content">
-            <span class="close">&times;</span>
-            <h3 id="dialog-title"></h3>
-            <p id="dialog-date"></p>
-            <div id="dialog-content"></div>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2024 TechNova Solutions. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
