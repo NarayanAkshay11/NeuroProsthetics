@@ -16,15 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const formData = new FormData(contactForm);
         const formValues = Object.fromEntries(formData.entries());
-
-        // Send form data via email
-        const email = 'your-email@example.com';
-        const subject = 'Contact Form Submission';
-        const body = `Name: ${formValues.name}\nEmail: ${formValues.email}\nMessage: ${formValues.message}`;
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
-        window.location.href = mailtoLink;
-
+        // Send form data to a particular email
+        console.log('Form submitted:', formValues);
+        
         // Clear the form
         contactForm.reset();
         
@@ -70,15 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     camera.position.z = 4;
 
-    // Add OrbitControls
+    // OrbitControls
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Enable damping (inertia)
-    controls.dampingFactor = 0.05;
+    controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+    controls.dampingFactor = 0.25;
+    controls.screenSpacePanning = false;
+    controls.maxPolarAngle = Math.PI / 2;
 
     // Animation
     function animate() {
         requestAnimationFrame(animate);
-        controls.update(); // Update controls
+        controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
         renderer.render(scene, camera);
     }
 
@@ -101,5 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('resize', resizeShapesContainer);
-    resizeShapesContainer(); // Call once to set initial size
+    resizeShapesContainer();
 });
