@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNova Solutions</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <header>
@@ -13,6 +14,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -21,36 +23,74 @@
 
     <main>
         <section id="home">
-            <h1>Welcome to TechNova Solutions</h1>
-            <p>Your one-stop shop for innovative tech solutions</p>
-            <button class="cta-button">Get Started</button>
+            <div class="hero">
+                <h1>Innovate. Create. Evolve.</h1>
+                <p>Empowering the future through cutting-edge technology solutions</p>
+                <button class="cta-button">Explore Our Services</button>
+            </div>
         </section>
 
         <section id="services">
             <h2>Our Services</h2>
             <div class="service-grid">
                 <div class="service-item">
+                    <i class="fas fa-code"></i>
                     <h3>Web Development</h3>
-                    <p>Custom websites tailored to your needs</p>
+                    <p>Crafting responsive and dynamic websites tailored to your unique needs</p>
                 </div>
                 <div class="service-item">
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Mobile Apps</h3>
-                    <p>Cross-platform mobile applications</p>
+                    <p>Building intuitive and powerful cross-platform mobile applications</p>
                 </div>
                 <div class="service-item">
+                    <i class="fas fa-brain"></i>
                     <h3>AI Solutions</h3>
-                    <p>Cutting-edge artificial intelligence integration</p>
+                    <p>Implementing cutting-edge artificial intelligence to solve complex problems</p>
                 </div>
                 <div class="service-item">
+                    <i class="fas fa-cloud"></i>
                     <h3>Cloud Services</h3>
-                    <p>Scalable and secure cloud infrastructure</p>
+                    <p>Providing scalable and secure cloud infrastructure for your business</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>Robotics</h3>
+                    <p>Designing and developing advanced robotic systems for various industries</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-vr-cardboard"></i>
+                    <h3>VR/AR Experiences</h3>
+                    <p>Creating immersive virtual and augmented reality solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-slider">
+                <div class="project">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>AI-Powered Healthcare Assistant</h3>
+                    <p>An intelligent system for early disease detection and personalized treatment recommendations.</p>
+                </div>
+                <div class="project">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Smart City Infrastructure</h3>
+                    <p>Integrated IoT solution for efficient urban management and improved quality of life.</p>
+                </div>
+                <div class="project">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>Autonomous Drone Delivery Network</h3>
+                    <p>Revolutionary logistics system using AI-guided drones for fast and eco-friendly deliveries.</p>
                 </div>
             </div>
         </section>
 
         <section id="about">
             <h2>About Us</h2>
-            <p>TechNova Solutions is a dynamic student-run tech startup offering a wide range of innovative services. Our team of passionate experts is dedicated to delivering cutting-edge solutions for all your technological needs.</p>
+            <p>TechNova Solutions is a dynamic student-run tech startup at the forefront of innovation. Our team of passionate experts is dedicated to pushing the boundaries of technology and delivering cutting-edge solutions for all your digital needs.</p>
+            <p>Founded by a group of visionary students, we combine fresh perspectives with rigorous academic knowledge to create products and services that shape the future. Our commitment to excellence and continuous learning drives us to stay ahead in the ever-evolving tech landscape.</p>
         </section>
 
         <section id="contact">
@@ -64,10 +104,13 @@
         </section>
     </main>
 
+    <div id="robotic-arm-container"></div>
+
     <footer>
         <p>&copy; 2024 TechNova Solutions. All rights reserved.</p>
     </footer>
 
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
